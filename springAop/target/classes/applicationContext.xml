@@ -1,0 +1,25 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation=
+        "http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd">
+        
+        <!-- Service Bean -->
+        <bean id="paymentService" class="com.example.aop.PaymentService"/>
+        
+        <!-- Aspect Bean -->
+        <bean id="loggingAspect" class="com.example.aop.LoggingAspect"/> 
+        
+        <!-- Enable AOP -->
+        <aop:config>
+        	<aop:aspect id="logAspect" ref="loggingAspect">
+        		<aop:pointcut id="paymentPointcut" 
+        		expression="execution(* com.example.aop.PaymentService.makePayment(..))"/>
+        		<aop:before method="logBefore" pointcut-ref="paymentPointcut"/>
+        		<aop:after method="logAfter" pointcut-ref="paymentPointcut"/>
+        	</aop:aspect>
+        </aop:config>
+</beans>

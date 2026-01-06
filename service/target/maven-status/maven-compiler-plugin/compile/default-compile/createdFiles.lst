@@ -1,0 +1,4 @@
+com/example/test/Application.class
+com/example/service/UserService.class
+com/example/config/AppConfig.class
+com/example/aspect/LoggingAspect.class
