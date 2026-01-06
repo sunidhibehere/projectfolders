@@ -1,0 +1,23 @@
+create database mydb;
+
+use mydb;
+
+create table Employee(
+ empId int primary key,
+ empName varchar(50) not null,
+ designation varchar(50)
+);
+
+create table Project(
+	projectId int primary key,
+    projectName varchar(255) Not null,
+    deadline date
+);
+
+CREATE TABLE assignments (
+    empId INT,
+    projectId INT,
+    PRIMARY KEY (empId, projectId),
+    FOREIGN KEY (empId) REFERENCES Employee(empId) ON DELETE CASCADE,
+    FOREIGN KEY (projectId) REFERENCES Project(projectId)
+);
