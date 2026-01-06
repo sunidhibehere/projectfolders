@@ -1,0 +1,7 @@
+com/example/product_supplier_jdbc/DatabaseManager.class
+com/example/product_supplier_jdbc/MainApp.class
+com/example/product_supplier_jdbc/Product.class
+com/example/product_supplier_jdbc/Supplier.class
+com/example/product_supplier_jdbc/ProductDAO.class
+com/example/product_supplier_jdbc/SupplierDAO.class
+com/example/product_supplier_jdbc/ManagementService.class
